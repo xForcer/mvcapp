@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Videos4You.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+@using (Html.BeginForm("New", "Customers"))
+{
+    <button type="submit" class="btn btn-primary">Add Customer</button>
+}
+
+<p>&nbsp;</p>
+<p></p>
+@if (!Model.Any())
+{
+    <p>There are no customers at the moment.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Customer</th>
+                <th>Membership Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
+                    <td>@customer.MembershipType.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

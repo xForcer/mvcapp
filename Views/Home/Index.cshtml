@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Videos For You</h1>
+    <p class="lead">Vides For you is an online video rental solution.</p>
+    <p>We have all the movies in one place</p>
+    <p>You can see them by clicking on the 'movies' tab</p>
+    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Latest movies</h2>
+        <p>
+            
+            <ul>
+                
+                <li>The Terminator</li>
+                <li>Die Hard</li>
+                <li>Titanic</li>
+            </ul>
+        </p>
+        <p><div class="btn btn-default" >@Html.ActionLink("All Movies", "Index", "Movies")</div></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Latest customers</h2>
+        <p>
+            <ul>
+
+                <li>No customers</li>
+                
+            </ul>
+        </p>
+        <p><div class="btn btn-default">@Html.ActionLink("All Customers", "Index", "Customers")</div></p>
+    </div>
+    
+</div>
