@@ -1,0 +1,34 @@
+﻿@model Videos4You.ViewModels.MovieFormViewModel
+
+@{
+    ViewBag.Title = "Movie Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h1>Technical details</h1>
+<h3>Name: @Model.Movie.Name</h3>
+<h3>Genre: @Model.Movie.Genres.Name</h3>
+<h3>Release date: @Model.Movie.Released.Value.ToShortDateString()</h3>
+<h3>Runtime: @Model.Movie.DurationInMinutes Minutes</h3>
+<hr/>
+<hr/>
+<h3>Times rented: @Model.Movie.TimesRented</h3>
+<h3>In stock: @Model.Movie.InStock</h3>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<h1>About:</h1>
+<h3>
+    @Model.Movie.Description
+</h3>
+
+<p>&nbsp;</p>
+<p></p>
+
+<button type="submit" class="btn btn-default">
+    @Html.ActionLink("Edit Movie", "Edit", "Movies", new {id = Model.Movie.Id}, null)
+</button>
+
+

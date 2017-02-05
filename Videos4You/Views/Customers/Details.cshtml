@@ -1,0 +1,34 @@
+﻿@model Videos4You.Models.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@Model.Name</h2>
+<hr/>
+<ul>
+    
+    <li><h3>Membership Type: @Model.MembershipType.Name</h3></li>
+    
+    @if (Model.BirthDate.HasValue)
+    {
+        <li>
+            <h3>Birthdate: @Model.BirthDate.Value.ToShortDateString()</h3>
+        </li>
+        
+    }
+    @if (Model.RegisteredDate.HasValue)
+    {
+        <li>
+            <h3>Registration Date: @Model.RegisteredDate</h3>
+        </li>
+
+    }
+</ul>
+
+
+
+
+
